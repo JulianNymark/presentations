@@ -6,8 +6,8 @@
 
     <title>reveal.js - The HTML Presentation Framework</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="Intro to video game physics">
+    <meta name="author" content="Julian Hisdal Nymark">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -48,17 +48,152 @@
 	</section>
 
 	<section>
-	  <h2>Chaos</h2>
-	  <ul class="fragment">
-	    <li>the player</li>
-	  </ul>
+	  <section>
+	    <h2>Chaos</h2>
+	    <ul class="fragment">
+	      <li>the player</li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <h2>What do we want?</h2>
+	    <ul class="fragment">
+	      <li>motion</li>
+	      <li>gravity</li>
+	      <li>collision</li>
+	      <li>surface friction</li>
+	      <li>air resistance</li>
+	      <li>fluids</li>
+	      <li>soft bodies</li>
+	      etc
+	    </ul>
+	  </section>
+	  
+	</section>
+	
+	<section>
+	  <section>
+	    <h2>physics engine tick</h2>
+	    <img width="600" src="pictures/frames.svg" alt="Meny">
+	    <li>discrete physics simulation</li>
+	  </section>
+	  
+	  <section>
+	    <h2>how do I physics?</h2>
+	    <pre class="fragment"><code data-trim contenteditable>
+main_game_loop(){
+    physics(dt); // pass delta time
+    draw();
+}
+	    </code></pre>
+	    <pre class="fragment"><code data-trim contenteditable>
+physics(dt){
+    ...
+    // update forces
+    // update velocities
+    // update positions
+    // check + resolve collisions etc
+    ...
+}
+	    </code></pre>
+	    <pre class="fragment"><code data-trim contenteditable>
+draw(){
+    ...
+    // draw things!
+    ...
+}
+	    </code></pre>
+	  </section>
+	  
 	</section>
 
 	<section>
-	  <h1>END</h1>
-	  to get this powerpoint go to:
+	  <section>
+	    <h2>Location, Velocity, Acceleration</h2>
+	    <div class="fragment">
+	      <h3>location</h3>
+	      <pre><code data-trim contenteditable>
+		  PVector loc = new PVector(x, y);
+	      </code></pre>
+	    </div>
+	    <div class="fragment">
+	      <h3>velocity</h3>
+	      <p>the rate of change of location</p>
+	    </div>
+	    <div class="fragment">
+	      <h3>acceleration</h3>
+	      <p>the rate of change of velocity</p>
+	    </div>
+	  </section>
+
+	  <section>
+	    <h2>Updating variables?</h2>
+	    <div class="fragment">
+	      <pre><code data-trim contenteditable>
+// somewhere inside the physics loop
+for ( physics_object po : container ){
+    vel += accel;
+    pos += vel;
+}
+	      </code></pre>
+	    </div>
+	    <h3 class="fragment">done!</h3>
+	  </section>
+
+	  <section>
+	    <p>live coding: motion!</p>
+	  </section>
+
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Gravity</h2>
+	    
+	  </section>
+
+	  <section>
+	    <p>live coding: gravity!</p>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Collisions</h2>
+	    <ul class="fragment">
+	      <li>boundary collisions</li>
+	      <li>circle to circle</li>
+	      <li> box to box</li>
+	      <li>box to circle</li>
+	      <li>triangle mesh collisions</li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <p>live coding: collisions!</p>
+	  </section>
+	</section>
+
+	<section>
+	  
+	  <section>
+	    <h2>existing physics engines</h2>
+	    <p>box2d (2D)</p>
+	    <p>bullet (3D)</p>
+
+	    <h2>game engines</h2>
+	    <p>Unity</p>
+	    <p>Unreal Engine 4</p>
+	    <p>blender game engine</p>
+	    
+	  </section>
+	  
+	  <section>
+	    <h1>END</h1>
+	    get this powerpoint at:
 	  </br>
-	  tinyurl.com/physicsphysics
+	  http://sonengamejam.org/talks/physics
+	  </section>
 	</section>
 
       </div>
