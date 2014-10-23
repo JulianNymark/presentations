@@ -129,8 +129,8 @@ draw(){
 	      <pre><code data-trim contenteditable>
 // somewhere inside the physics loop
 for ( physics_object po : container ){
-    vel += accel;
-    pos += vel;
+    vel += accel * delta_time;
+    pos += vel * delta_time;
 }
 	      </code></pre>
 	    </div>
@@ -164,9 +164,9 @@ for ( physics_object po : container ){
 	  <section>
 	    <h2>Collisions</h2>
 	    <ul class="fragment">
-	      <li>boundary collisions</li>
+	      <li>boundary checks</li>
 	      <li>circle to circle</li>
-	      <li> box to box</li>
+	      <li>box to box</li>
 	      <li>box to circle</li>
 	      <li>triangle mesh collisions</li>
 	    </ul>
@@ -204,7 +204,7 @@ for ( physics_object po : container ){
 	    <h1>END</h1>
 	    get this powerpoint at:
 	  </br>
-	  http://sonengamejam.org/talks/physics
+	  sonengamejam.org/talks/physics
 	  </section>
 	</section>
 
