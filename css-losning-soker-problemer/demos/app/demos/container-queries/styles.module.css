@@ -1,0 +1,22 @@
+.theContainer {
+  /* container-type: inline-size; */
+  /* container-name: my-container-name; */
+  container: my-container-name / inline-size;
+  border: solid 1px gray;
+}
+
+/* cool container units! cqw, cqh, cqi, cqb */
+.theContainer {
+  & p {
+    margin-left: 50cqw;
+  }
+}
+
+/* trigger when a condition is met for container */
+@container my-container-name (max-width: 500px) {
+  .theContainer {
+    & p {
+      background: green;
+    }
+  }
+}
