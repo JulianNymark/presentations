@@ -68,7 +68,13 @@ export default function Page() {
           nesting
         </Link>
         {createSourcedLink("property")}
-        <Link href={"#"}>starting-style</Link>
+        <Link
+          href={
+            "https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style"
+          }
+        >
+          starting-style
+        </Link>
       </VStack>
     </main>
   );
